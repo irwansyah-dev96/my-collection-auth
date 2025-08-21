@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.irwansyahdev96.readcollection.business.user.model.User;
 import io.irwansyahdev96.readcollection.business.user.service.UserService;
-import io.irwansyahdev96.readcollection.model.User;
+
+
 
 @RestController
-@RequestMapping("users")
+@RequestMapping("user")
 public class UserController {
 
     @Autowired

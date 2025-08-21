@@ -15,7 +15,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import io.irwansyahdev96.readcollection.business.user.dao.UserDao;
-import io.irwansyahdev96.readcollection.model.User;
+import io.irwansyahdev96.readcollection.business.user.model.User;
+
 
 @Service
 public class UserService implements UserDetailsService {
@@ -35,8 +36,8 @@ public class UserService implements UserDetailsService {
         Map<String, Object> message = new HashMap<>();
 
         if(userInsert != null){
-            message.put("id", userInsert.getId());
-            message.put("message", "user has been added");
+            message.put("id", userInsert.getUsername());
+            message.put("message", "User has been added");
         }
 
         return message;
