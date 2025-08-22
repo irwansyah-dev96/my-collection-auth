@@ -47,7 +47,7 @@ public class LoginController {
         final Map<String,Object> claims = new HashMap<>() ;
         final Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
-        cal.add(Calendar.HOUR_OF_DAY, 1);
+        cal.add(Calendar.HOUR_OF_DAY, 3);
 
         claims.put("exp", cal.getTime());
         claims.put("id", user.getUsername());
