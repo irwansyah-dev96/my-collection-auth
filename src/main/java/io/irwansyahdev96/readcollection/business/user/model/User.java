@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tb_user")
 public class User {
@@ -16,6 +18,7 @@ public class User {
     @Column(name = "name",nullable = false,length = 50)
     private String name;
 
+    @JsonIgnore
     @Column(name = "password",nullable = false,length = 250)
     private String password;
 

@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import io.irwansyahdev96.readcollection.base.dto.res.BaseResListDto;
 import io.irwansyahdev96.readcollection.business.user.dao.UserDao;
 import io.irwansyahdev96.readcollection.business.user.model.User;
 
@@ -38,9 +39,19 @@ public class UserService implements UserDetailsService {
         if(userInsert != null){
             message.put("id", userInsert.getUsername());
             message.put("message", "User has been added");
+        }else{
+            throw new RuntimeException("Failed to save");
         }
 
         return message;
+    }
+
+    public BaseResListDto<User> getAll(){
+        BaseResListDto<User> baseResListDto = new BaseResListDto<>();
+        baseResListDto.setData(userDao.getAll());
+        baseResListDto.setCountOfData(userDao.count(User.class));
+
+        return baseResListDto;
     }
 
     @Override

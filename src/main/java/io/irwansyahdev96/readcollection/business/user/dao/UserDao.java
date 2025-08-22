@@ -1,13 +1,12 @@
 package io.irwansyahdev96.readcollection.business.user.dao;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
 import io.irwansyahdev96.readcollection.base.dao.BaseDao;
 import io.irwansyahdev96.readcollection.business.user.model.User;
-
-
 
 @Repository
 public class UserDao extends BaseDao{
@@ -20,5 +19,11 @@ public class UserDao extends BaseDao{
         final Optional<User> optional = Optional.ofNullable(result);
 
         return optional;
+    }
+
+    public List<User> getAll(){
+        List<User> resultList = getEM().createQuery("SELECT u FROM User u", User.class).getResultList();
+
+        return resultList;
     }
 }
