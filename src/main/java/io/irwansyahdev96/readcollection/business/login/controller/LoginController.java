@@ -36,7 +36,7 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @PostMapping()
+    @PostMapping
     public ResponseEntity<?> login(@RequestBody LoginDto loginDto){
         Authentication authentication = new UsernamePasswordAuthenticationToken(loginDto.getUsername(),loginDto.getPassword());
         authenticationManager.authenticate(authentication);
