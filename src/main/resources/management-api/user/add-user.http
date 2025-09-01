@@ -1,9 +1,9 @@
-POST http://localhost:8080/user/
+POST http://localhost:8083/mbc/user
 content-type: application/json
 
 {
-    "username": "irwan.dev",
-    "name": "irwansyah",
-    "password": "irwan.dev",
+    "username": "irwan.bae33",
+    "name": "irwansyahs",
+    "password": "irwan.bae33",
     "role": "se"
 }
