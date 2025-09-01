@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    image: mbc-auth:1.0
+    ports: 
+      - "8083:8083"
+    environment:
+      config_properties_location: application.properties
+    networks:
+      - core-network
+    
+networks:
+  core-network:
+    external: true
