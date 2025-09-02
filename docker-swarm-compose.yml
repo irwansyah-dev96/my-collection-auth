@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  app:
+    image: mbc-core:1.0
+    ports:
+      - "8081:8081"
+    networks:
+      - swarm-net
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+    networks:
+      - swarm-net
+
+networks:
+  swarm-net:
+    external: true
