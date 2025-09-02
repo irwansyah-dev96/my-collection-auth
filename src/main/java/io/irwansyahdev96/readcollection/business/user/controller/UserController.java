@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.irwansyahdev96.readcollection.business.user.dto.UserReqDto;
 import io.irwansyahdev96.readcollection.business.user.model.User;
 import io.irwansyahdev96.readcollection.business.user.service.UserService;
 
@@ -24,7 +25,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<?> save(@RequestBody User user){
+    public ResponseEntity<?> save(@RequestBody UserReqDto user){
         Map<String,Object> map = userService.save(user);
 
         return new ResponseEntity<>(map, HttpStatus.CREATED);

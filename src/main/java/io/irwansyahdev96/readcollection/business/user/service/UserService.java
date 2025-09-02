@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import io.irwansyahdev96.readcollection.base.dto.res.BaseResListDto;
 import io.irwansyahdev96.readcollection.business.user.dao.UserDao;
+import io.irwansyahdev96.readcollection.business.user.dto.UserReqDto;
 import io.irwansyahdev96.readcollection.business.user.model.User;
 
 
@@ -29,8 +30,13 @@ public class UserService implements UserDetailsService {
     private PasswordEncoder passwordEncoder;
 
     @Transactional(rollbackOn = Exception.class)
-    public Map<String, Object> save(User user){
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+    public Map<String, Object> save(UserReqDto userReq){
+        User user = new User();
+        user.setUsername(userReq.getUsername());
+        user.setPassword(passwordEncoder.encode(userReq.getPassword()));
+        user.setRole(userReq.getRole());
+        user.setName(userReq.getName());
+
 
         User userInsert = userDao.save(user);
 

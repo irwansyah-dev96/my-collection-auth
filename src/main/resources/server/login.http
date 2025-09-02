@@ -1,4 +1,4 @@
-POST http://localhost:8083/mbc/login/
+POST http://192.168.252.166:8083/mbc/login/
 content-type: application/json
 
 {
