@@ -1,3 +1,3 @@
 GET  http://localhost:8083/mbc/user/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyYyI6InNlIiwiaWQiOiJpcndhbi5kZXYiLCJleHAiOjE3NTU4MzM4MzF9.k4QF2BjrhKNB9VGNXNLQcUi6WHF2JWFaE6VRbsP_xXQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyYyI6InNlIiwiaWQiOiJpcndhbi5kZXYiLCJleHAiOjE3NTY4MzY2MTN9.0y5jLB28Lccvd4oh8iAQXG9dyyTZoScllKy_EwmS4YQ
